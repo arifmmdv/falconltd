@@ -7,15 +7,9 @@ use Illuminate\Support\Facades\App;
 class Translator {
     public function translate($item,$property): string
     {
-        if (App::getLocale() === 'en') {
-            if (isset($item[$property.'_en']) && !empty($item[$property.'_en'])) {
-                return $item[$property.'_en'];
-            } else {
-                return $item[$property];
-            }
-        } elseif (App::getLocale() === 'ru') {
-            if (isset($item[$property.'_ru']) && !empty($item[$property.'_ru'])) {
-                return $item[$property.'_ru'];
+        if (App::getLocale() === 'tr') {
+            if (isset($item[$property.'_tr']) && !empty($item[$property.'_tr'])) {
+                return $item[$property.'_tr'];
             } else {
                 return $item[$property];
             }

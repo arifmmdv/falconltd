@@ -11,7 +11,7 @@ class MenuItem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','title_en','title_ru','slug','menu_id','parent_id'];
+    protected $fillable = ['title','title_tr','slug','menu_id','parent_id'];
 
     public function template(): BelongsTo
     {

@@ -34,7 +34,7 @@ class PageResource extends Resource
                             ->schema([
                                 Tabs::make('title_tabs')->label('Title')
                                     ->tabs([
-                                        Tabs\Tab::make('Az')
+                                        Tabs\Tab::make('En')
                                             ->schema([
                                                 Forms\Components\TextInput::make('title')
                                                     ->required()
@@ -48,13 +48,9 @@ class PageResource extends Resource
                                                         $set('slug', Str::slug($state));
                                                     }),
                                             ]),
-                                        Tabs\Tab::make('En')
+                                        Tabs\Tab::make('Tr')
                                             ->schema([
-                                                Forms\Components\TextInput::make('title_en')->label('Title'),
-                                            ]),
-                                        Tabs\Tab::make('Ru')
-                                            ->schema([
-                                                Forms\Components\TextInput::make('title_ru')->label('Title'),
+                                                Forms\Components\TextInput::make('title_tr')->label('Title'),
                                             ]),
                                     ])->columnSpanFull(),
                                 Forms\Components\TextInput::make('slug')
@@ -76,26 +72,19 @@ class PageResource extends Resource
                                             ->schema([
                                                 Tabs::make('SlideTabs')
                                                     ->tabs([
-                                                        Tabs\Tab::make('Az')
+                                                        Tabs\Tab::make('En')
                                                             ->schema([
                                                                 Forms\Components\TextInput::make('title'),
                                                                 Forms\Components\TextInput::make('sub_title')->label('Sub title'),
                                                                 Forms\Components\TextInput::make('button_text')->label('Button Text'),
                                                                 Forms\Components\TextInput::make('button_text_2')->label('Button 2 Text'),
                                                             ]),
-                                                        Tabs\Tab::make('En')
+                                                        Tabs\Tab::make('Tr')
                                                             ->schema([
-                                                                Forms\Components\TextInput::make('title_en'),
-                                                                Forms\Components\TextInput::make('sub_title_en')->label('Sub title'),
-                                                                Forms\Components\TextInput::make('button_text_en')->label('Button Text'),
-                                                                Forms\Components\TextInput::make('button_text_2_en')->label('Button 2 Text'),
-                                                            ]),
-                                                        Tabs\Tab::make('Ru')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title_ru'),
-                                                                Forms\Components\TextInput::make('sub_title_ru')->label('Sub title'),
-                                                                Forms\Components\TextInput::make('button_text_ru')->label('Button Text'),
-                                                                Forms\Components\TextInput::make('button_text_2_ru')->label('Button 2 Text'),
+                                                                Forms\Components\TextInput::make('title_tr'),
+                                                                Forms\Components\TextInput::make('sub_title_tr')->label('Sub title'),
+                                                                Forms\Components\TextInput::make('button_text_tr')->label('Button Text'),
+                                                                Forms\Components\TextInput::make('button_text_2_tr')->label('Button 2 Text'),
                                                             ]),
                                                     ]),
                                                 Forms\Components\TextInput::make('button_link')->label('Button Link'),
@@ -111,7 +100,7 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('AboutTabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
@@ -120,22 +109,13 @@ class PageResource extends Resource
                                                         Forms\Components\RichEditor::make('bold_content')
                                                             ->label('Bold content'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_en')
+                                                        Forms\Components\RichEditor::make('content_tr')
                                                             ->label('Content'),
-                                                        Forms\Components\RichEditor::make('bold_content_en')
-                                                            ->label('Bold content'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_ru')
-                                                            ->label('Content'),
-                                                        Forms\Components\RichEditor::make('bold_content_ru')
+                                                        Forms\Components\RichEditor::make('bold_content_tr')
                                                             ->label('Bold content'),
                                                     ]),
                                             ]),
@@ -155,7 +135,7 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('About2Tabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
@@ -165,26 +145,15 @@ class PageResource extends Resource
                                                             ->label('Content'),
                                                         Forms\Components\TextInput::make('button_text')->label('Button Text'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_en')
+                                                        Forms\Components\RichEditor::make('bold_content_tr')
                                                             ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_en')
+                                                        Forms\Components\RichEditor::make('content_tr')
                                                             ->label('Content'),
-                                                        Forms\Components\TextInput::make('button_text_en')
-                                                            ->label('Button Text'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_ru')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_ru')
-                                                            ->label('Content'),
-                                                        Forms\Components\TextInput::make('button_text_ru')
+                                                        Forms\Components\TextInput::make('button_text_tr')
                                                             ->label('Button Text'),
                                                     ]),
                                             ]),
@@ -200,7 +169,7 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('CompanyVisionTabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
@@ -209,22 +178,13 @@ class PageResource extends Resource
                                                         Forms\Components\RichEditor::make('content')
                                                             ->label('Content'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_en')
+                                                        Forms\Components\RichEditor::make('bold_content_tr')
                                                             ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_en')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_ru')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_ru')
+                                                        Forms\Components\RichEditor::make('content_tr')
                                                             ->label('Content'),
                                                     ]),
                                             ]),
@@ -239,7 +199,7 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('CompanyVision2Tabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
@@ -248,22 +208,13 @@ class PageResource extends Resource
                                                         Forms\Components\RichEditor::make('content')
                                                             ->label('Content'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_en')
+                                                        Forms\Components\RichEditor::make('bold_content_tr')
                                                             ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_en')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_ru')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_ru')
+                                                        Forms\Components\RichEditor::make('content_tr')
                                                             ->label('Content'),
                                                     ]),
                                             ]),
@@ -278,25 +229,18 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('OurValuesTabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
                                                         Forms\Components\RichEditor::make('content')
                                                             ->label('Content'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_en')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_ru')
+                                                        Forms\Components\RichEditor::make('content_tr')
                                                             ->label('Content'),
                                                     ]),
                                             ]),
@@ -305,25 +249,18 @@ class PageResource extends Resource
                                             ->schema([
                                                 Tabs::make('ValueTabs')
                                                     ->tabs([
-                                                        Tabs\Tab::make('Az')
+                                                        Tabs\Tab::make('En')
                                                             ->schema([
                                                                 Forms\Components\TextInput::make('title')
                                                                     ->label('Title'),
                                                                 Forms\Components\RichEditor::make('content')
                                                                     ->label('Content'),
                                                             ]),
-                                                        Tabs\Tab::make('En')
+                                                        Tabs\Tab::make('Tr')
                                                             ->schema([
-                                                                Forms\Components\TextInput::make('title_en')
+                                                                Forms\Components\TextInput::make('title_tr')
                                                                     ->label('Title'),
-                                                                Forms\Components\RichEditor::make('content_en')
-                                                                    ->label('Content'),
-                                                            ]),
-                                                        Tabs\Tab::make('Ru')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title_en')
-                                                                    ->label('Title'),
-                                                                Forms\Components\RichEditor::make('content_en')
+                                                                Forms\Components\RichEditor::make('content_tr')
                                                                     ->label('Content'),
                                                             ]),
                                                     ]),
@@ -344,25 +281,18 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('OurApproach2Tabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
                                                         Forms\Components\RichEditor::make('content')
                                                             ->label('Content'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_en')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_ru')
+                                                        Forms\Components\RichEditor::make('content_tr')
                                                             ->label('Content'),
                                                     ]),
                                             ]),
@@ -394,7 +324,7 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('HistoryTabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
@@ -403,22 +333,13 @@ class PageResource extends Resource
                                                         Forms\Components\RichEditor::make('content')
                                                             ->label('Content'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_en')
+                                                        Forms\Components\RichEditor::make('bold_content_tr')
                                                             ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_en')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_ru')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_ru')
+                                                        Forms\Components\RichEditor::make('content_tr')
                                                             ->label('Content'),
                                                     ]),
                                             ]),
@@ -453,20 +374,15 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('PageTitleTabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title')
                                                             ->required(),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
-                                                            ->label('Title'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
                                                     ]),
                                             ])
@@ -486,25 +402,18 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('Tabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
                                                         Forms\Components\TextInput::make('sub_title')
                                                             ->label('Sub title'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title_en')
-                                                            ->label('Sub title'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title_ru')
+                                                        Forms\Components\TextInput::make('sub_title_tr')
                                                             ->label('Sub title'),
                                                     ]),
                                             ]),
@@ -514,25 +423,18 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('ServicesTabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
                                                         Forms\Components\TextInput::make('sub_title')
                                                             ->label('Sub title'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_en')
+                                                        Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title_en')
-                                                            ->label('Sub title'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_ru')
-                                                            ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title_ru')
+                                                        Forms\Components\TextInput::make('sub_title_tr')
                                                             ->label('Sub title'),
                                                     ]),
                                             ]),
@@ -590,26 +492,19 @@ class PageResource extends Resource
                                     ->schema([
                                         Tabs::make('ContactsTabs')
                                             ->tabs([
-                                                Tabs\Tab::make('Az')
+                                                Tabs\Tab::make('En')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('address_title')->label('Address title'),
                                                         Forms\Components\TextInput::make('address')->label('Address'),
                                                         Forms\Components\TextInput::make('phone_title')->label('Phone Title'),
                                                         Forms\Components\TextInput::make('email_title')->label('Email Title'),
                                                     ]),
-                                                Tabs\Tab::make('En')
+                                                Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('address_title_en')->label('Address title'),
-                                                        Forms\Components\TextInput::make('address_en')->label('Address'),
-                                                        Forms\Components\TextInput::make('phone_title_en')->label('Phone Title'),
-                                                        Forms\Components\TextInput::make('email_title_en')->label('Email Title'),
-                                                    ]),
-                                                Tabs\Tab::make('Ru')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('address_title_ru')->label('Address title'),
-                                                        Forms\Components\TextInput::make('address_ru')->label('Address'),
-                                                        Forms\Components\TextInput::make('phone_title_ru')->label('Phone Title'),
-                                                        Forms\Components\TextInput::make('email_title_ru')->label('Email Title'),
+                                                        Forms\Components\TextInput::make('address_title_tr')->label('Address title'),
+                                                        Forms\Components\TextInput::make('address_tr')->label('Address'),
+                                                        Forms\Components\TextInput::make('phone_title_tr')->label('Phone Title'),
+                                                        Forms\Components\TextInput::make('email_title_tr')->label('Email Title'),
                                                     ]),
                                             ]),
                                         Forms\Components\Repeater::make('phone')
@@ -617,17 +512,13 @@ class PageResource extends Resource
                                             ->schema([
                                                 Tabs::make('PhoneTabs')
                                                     ->tabs([
-                                                        Tabs\Tab::make('Az')
+                                                        Tabs\Tab::make('En')
                                                             ->schema([
                                                                 Forms\Components\TextInput::make('title'),
                                                             ]),
-                                                        Tabs\Tab::make('En')
+                                                        Tabs\Tab::make('Tr')
                                                             ->schema([
-                                                                Forms\Components\TextInput::make('title_en'),
-                                                            ]),
-                                                        Tabs\Tab::make('Ru')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title_ru'),
+                                                                Forms\Components\TextInput::make('title_tr'),
                                                             ]),
                                                     ]),
                                                 Forms\Components\TextInput::make('value'),
@@ -637,17 +528,13 @@ class PageResource extends Resource
                                             ->schema([
                                                 Tabs::make('EmailTabs')
                                                     ->tabs([
-                                                        Tabs\Tab::make('Az')
+                                                        Tabs\Tab::make('En')
                                                             ->schema([
                                                                 Forms\Components\TextInput::make('title'),
                                                             ]),
-                                                        Tabs\Tab::make('En')
+                                                        Tabs\Tab::make('Tr')
                                                             ->schema([
-                                                                Forms\Components\TextInput::make('title_en'),
-                                                            ]),
-                                                        Tabs\Tab::make('Ru')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title_ru'),
+                                                                Forms\Components\TextInput::make('title_tr'),
                                                             ]),
                                                     ]),
                                                 Forms\Components\TextInput::make('value'),
@@ -673,20 +560,15 @@ class PageResource extends Resource
                             ->schema([
                                 Tabs::make('SeoTabs')
                                     ->tabs([
-                                        Tabs\Tab::make('Az')
+                                        Tabs\Tab::make('En')
                                             ->schema([
                                                 Forms\Components\TextInput::make('seo_title')->label('Seo Title'),
                                                 Forms\Components\Textarea::make('seo_description')->label('Seo Description'),
                                             ]),
-                                        Tabs\Tab::make('En')
+                                        Tabs\Tab::make('Tr')
                                             ->schema([
-                                                Forms\Components\TextInput::make('seo_title_en')->label('Seo Title'),
-                                                Forms\Components\Textarea::make('seo_description_en')->label('Seo Description'),
-                                            ]),
-                                        Tabs\Tab::make('Ru')
-                                            ->schema([
-                                                Forms\Components\TextInput::make('seo_title_ru')->label('Seo Title'),
-                                                Forms\Components\Textarea::make('seo_description_ru')->label('Seo Description'),
+                                                Forms\Components\TextInput::make('seo_title_tr')->label('Seo Title'),
+                                                Forms\Components\Textarea::make('seo_description_tr')->label('Seo Description'),
                                             ]),
                                     ]),
                             ]),

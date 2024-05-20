@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('title_en')->nullable();
-            $table->string('title_ru')->nullable();
+            $table->string('title_tr')->nullable();
             $table->string('slug')->unique();
             $table->foreignId('parent_id')
                 ->nullable()
@@ -28,11 +27,9 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->json('content')->nullable();
             $table->string('seo_title')->nullable();
-            $table->string('seo_title_en')->nullable();
-            $table->string('seo_title_ru')->nullable();
+            $table->string('seo_title_tr')->nullable();
             $table->text('seo_description')->nullable();
-            $table->text('seo_description_en')->nullable();
-            $table->text('seo_description_ru')->nullable();
+            $table->text('seo_description_tr')->nullable();
             $table->timestamps();
         });
     }

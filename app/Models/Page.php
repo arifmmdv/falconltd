@@ -12,9 +12,9 @@ class Page extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title','title_en','title_ru',
-        'seo_title','seo_title_en','seo_title_ru',
-        'seo_description','seo_description_en','seo_description_ru',
+        'title','title_tr',
+        'seo_title','seo_title_tr',
+        'seo_description','seo_description_tr',
         'slug','parent_id','is_visible','image','template_id','content',
     ];
 

@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('title_en')->nullable();
-            $table->string('title_ru')->nullable();
+            $table->string('title_tr')->nullable();
             $table->string('slug');
             $table->foreignId('menu_id')
                 ->nullable()

@@ -21,21 +21,15 @@ class MenuItemsRelationManager extends RelationManager
             ->schema([
                 Tabs::make('Tabs')
                     ->tabs([
-                        Tabs\Tab::make('Az')
+                        Tabs\Tab::make('En')
                             ->schema([
                                 Forms\Components\TextInput::make('title')
                                     ->required()
                                     ->maxLength(255),
                             ]),
-                        Tabs\Tab::make('En')
+                        Tabs\Tab::make('Tr')
                             ->schema([
-                                Forms\Components\TextInput::make('title_en')
-                                    ->label('Title')
-                                    ->maxLength(255),
-                            ]),
-                        Tabs\Tab::make('Ru')
-                            ->schema([
-                                Forms\Components\TextInput::make('title_ru')
+                                Forms\Components\TextInput::make('title_tr')
                                     ->label('Title')
                                     ->maxLength(255),
                             ]),
