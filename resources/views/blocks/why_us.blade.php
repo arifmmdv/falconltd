@@ -1,4 +1,4 @@
-<div class="flex flex-col max-w-xl">
+<div class="flex flex-col">
     <h2 class="text-gray-800 text-3xl font-semibold mb-5">{{ $translator->translate($block,'title') }}</h2>
     @if(!empty($block['content']))
         <div class="text-gray-900 mb-6">

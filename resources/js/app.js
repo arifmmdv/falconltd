@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
+    const menuItems = document.querySelectorAll('.menu-item');
     const images = document.querySelectorAll('.section-image');
 
     const makeVisible = (index) => {
@@ -12,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.classList.add('opacity-0');
             }
         });
+        menuItems.forEach(item => {
+            item.classList.remove('bg-primary');
+            item.classList.remove('text-white');
+        });
+        menuItems[index].classList.add('bg-primary');
+        menuItems[index].classList.add('text-white');
     };
 
     const handleScroll = () => {
@@ -28,17 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener ("scroll",() => handleScroll());
     handleScroll();
 
-    const menuItems = document.querySelectorAll('.menu-item');
-
     menuItems.forEach(item => {
         item.addEventListener('click', (event) => {
+            document.getElementById('mobile-menu').classList.remove('open');
             event.preventDefault();
-
-            // Remove active class from all menu items
-            menuItems.forEach(menuItem => menuItem.classList.remove('active'));
-
-            // Add active class to the clicked menu item
-            item.classList.add('active');
 
             const targetId = item.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
@@ -50,6 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+    });
+
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('open');
+    });
+
+    document.querySelector('.mobile-menu-close').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.remove('open');
     });
 
 });

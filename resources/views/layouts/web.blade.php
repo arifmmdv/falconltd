@@ -45,7 +45,8 @@
     <link rel="Shortcut Icon" type="image/png" href="favicon.ico" />
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    @vite('resources/css/app.css')
+    <link rel="preload" as="style" href="/build/assets/app-o-lbg1nZ.css" />
+    <link rel="stylesheet" href="/build/assets/app-o-lbg1nZ.css" data-navigate-track="reload" />
 </head>
 <body>
 @include('components.header')
@@ -64,6 +65,7 @@
         @endforeach
     </div>
 </div>
-@vite('resources/js/app.js')
+<link rel="modulepreload" href="/build/assets/app-Yh1zVksU.js" />
+<script type="module" src="/build/assets/app-Yh1zVksU.js" data-navigate-track="reload"></script>
 </body>
 </html>
