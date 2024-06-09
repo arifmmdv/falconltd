@@ -22,7 +22,7 @@
     <meta name="author" content="{{ env('APP_NAME') }}" />
     <meta name="robots" content="" />
     <meta name="description" content="{{$description}}" />
-    <title>{{ $title}}</title>
+    <title>{{$title}}</title>
 
     <!-- Og Tags -->
     <meta property="og:title" content="{{$title}}" />
@@ -45,8 +45,8 @@
     <link rel="Shortcut Icon" type="image/png" href="favicon.ico" />
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    <link rel="preload" as="style" href="/build/assets/app-o-lbg1nZ.css" />
-    <link rel="stylesheet" href="/build/assets/app-o-lbg1nZ.css" data-navigate-track="reload" />
+    <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-p0jNz13v.css" />
+    <link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-p0jNz13v.css" data-navigate-track="reload" />
 </head>
 <body>
 @include('components.header')
@@ -65,7 +65,7 @@
         @endforeach
     </div>
 </div>
-<link rel="modulepreload" href="/build/assets/app-Yh1zVksU.js" />
-<script type="module" src="/build/assets/app-Yh1zVksU.js" data-navigate-track="reload"></script>
+<link rel="modulepreload" href="http://127.0.0.1:8000/build/assets/app-Yh1zVksU.js" />
+<script type="module" src="http://127.0.0.1:8000/build/assets/app-Yh1zVksU.js" data-navigate-track="reload"></script>
 </body>
 </html>

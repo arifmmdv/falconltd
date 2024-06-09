@@ -58,7 +58,7 @@
 }
 
 .menu .bg-primary {
-    background: #0F4390 !important;
+    background: #1C3C6E !important;
 }
 
 @media all and (max-width: 1024px) {
@@ -86,7 +86,7 @@
     }
 
     .mobile-menu .text-white {
-        color: #0F4390 !important;
+        color: #1C3C6E !important;
         background: transparent !important;
     }
 
