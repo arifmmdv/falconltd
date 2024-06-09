@@ -50,7 +50,7 @@
 <body>
 @include('components.header')
 <div class="wrapper">
-    <div class="content">
+    <div class="content relative z-20">
         @include('blocks.page')
     </div>
     <div class="image-container z-10">

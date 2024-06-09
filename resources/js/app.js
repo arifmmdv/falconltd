@@ -27,4 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener ("scroll",() => handleScroll());
     handleScroll();
+
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            // Remove active class from all menu items
+            menuItems.forEach(menuItem => menuItem.classList.remove('active'));
+
+            // Add active class to the clicked menu item
+            item.classList.add('active');
+
+            const targetId = item.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
 });

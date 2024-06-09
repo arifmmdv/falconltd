@@ -7,7 +7,7 @@
     @endif
     <div class="flex flex-col gap-4">
         @foreach($block['value'] as $value)
-        <div class="flex gap-4">
+        <div class="flex gap-4 max-sm:flex-col">
             @if(!empty($value['icon']))
                 <div>
                     {!! $value['icon'] !!}
