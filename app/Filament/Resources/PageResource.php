@@ -64,170 +64,31 @@ class PageResource extends Resource
 
                         Forms\Components\Builder::make('content')
                             ->blocks([
-                                Forms\Components\Builder\Block::make('slider')
-                                    ->label('Slider')
+                                Forms\Components\Builder\Block::make('hero')
+                                    ->label('Hero')
                                     ->schema([
-                                        Forms\Components\Repeater::make('slide')
-                                            ->label('Slide')
-                                            ->schema([
-                                                Tabs::make('SlideTabs')
-                                                    ->tabs([
-                                                        Tabs\Tab::make('En')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title'),
-                                                                Forms\Components\TextInput::make('sub_title')->label('Sub title'),
-                                                                Forms\Components\TextInput::make('button_text')->label('Button Text'),
-                                                                Forms\Components\TextInput::make('button_text_2')->label('Button 2 Text'),
-                                                            ]),
-                                                        Tabs\Tab::make('Tr')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title_tr'),
-                                                                Forms\Components\TextInput::make('sub_title_tr')->label('Sub title'),
-                                                                Forms\Components\TextInput::make('button_text_tr')->label('Button Text'),
-                                                                Forms\Components\TextInput::make('button_text_2_tr')->label('Button 2 Text'),
-                                                            ]),
-                                                    ]),
-                                                Forms\Components\TextInput::make('button_link')->label('Button Link'),
-                                                Forms\Components\TextInput::make('button_link_2')->label('Button 2 Link'),
-                                                Forms\Components\FileUpload::make('image')
-                                                    ->directory('slides')
-                                                    ->image()
-                                                    ->imageEditor(),
-                                            ]),
-                                    ]),
-                                Forms\Components\Builder\Block::make('about')
-                                    ->label('About')
-                                    ->schema([
-                                        Tabs::make('AboutTabs')
+                                        Tabs::make('HeroTabs')
                                             ->tabs([
                                                 Tabs\Tab::make('En')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content')
-                                                            ->label('Content'),
-                                                        Forms\Components\RichEditor::make('bold_content')
-                                                            ->label('Bold content'),
+                                                        Forms\Components\TextInput::make('first_line')
+                                                            ->label('First Line'),
+                                                        Forms\Components\TextInput::make('second_line')
+                                                            ->label('Second Line'),
                                                     ]),
                                                 Tabs\Tab::make('Tr')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_tr')
-                                                            ->label('Content'),
-                                                        Forms\Components\RichEditor::make('bold_content_tr')
-                                                            ->label('Bold content'),
+                                                        Forms\Components\TextInput::make('first_line_tr')
+                                                            ->label('First Line'),
+                                                        Forms\Components\TextInput::make('second_line_tr')
+                                                            ->label('Second Line'),
                                                     ]),
                                             ]),
-                                        Forms\Components\FileUpload::make('image_1')->label('Image 1')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor(),
-                                        Forms\Components\FileUpload::make('image_2')->label('Image 2')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor()
                                     ]),
-                                Forms\Components\Builder\Block::make('about_2')
-                                    ->label('About 2')
+                                Forms\Components\Builder\Block::make('why_us')
+                                    ->label('Why us?')
                                     ->schema([
-                                        Tabs::make('About2Tabs')
-                                            ->tabs([
-                                                Tabs\Tab::make('En')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content')
-                                                            ->label('Content'),
-                                                        Forms\Components\TextInput::make('button_text')->label('Button Text'),
-                                                    ]),
-                                                Tabs\Tab::make('Tr')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_tr')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_tr')
-                                                            ->label('Content'),
-                                                        Forms\Components\TextInput::make('button_text_tr')
-                                                            ->label('Button Text'),
-                                                    ]),
-                                            ]),
-                                        Forms\Components\TextInput::make('button_link')->label('Button Link'),
-                                        Forms\Components\FileUpload::make('image')->label('Image')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor(),
-                                    ]),
-                                Forms\Components\Builder\Block::make('company_vision')
-                                    ->label('Company Vision')
-                                    ->schema([
-                                        Tabs::make('CompanyVisionTabs')
-                                            ->tabs([
-                                                Tabs\Tab::make('En')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Tr')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_tr')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_tr')
-                                                            ->label('Content'),
-                                                    ]),
-                                            ]),
-                                        Forms\Components\FileUpload::make('image')->label('Image')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor(),
-                                    ]),
-                                Forms\Components\Builder\Block::make('company_vision_2')
-                                    ->label('Company Vision 2')
-                                    ->schema([
-                                        Tabs::make('CompanyVision2Tabs')
-                                            ->tabs([
-                                                Tabs\Tab::make('En')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Tr')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_tr')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_tr')
-                                                            ->label('Content'),
-                                                    ]),
-                                            ]),
-                                        Forms\Components\FileUpload::make('image')->label('Image')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor(),
-                                    ]),
-                                Forms\Components\Builder\Block::make('our_values')
-                                    ->label('Our Values')
-                                    ->schema([
-                                        Tabs::make('OurValuesTabs')
+                                        Tabs::make('WhyUsTabs')
                                             ->tabs([
                                                 Tabs\Tab::make('En')
                                                     ->schema([
@@ -251,6 +112,8 @@ class PageResource extends Resource
                                                     ->tabs([
                                                         Tabs\Tab::make('En')
                                                             ->schema([
+                                                                Forms\Components\Textarea::make('icon')
+                                                                    ->label('Icon'),
                                                                 Forms\Components\TextInput::make('title')
                                                                     ->label('Title'),
                                                                 Forms\Components\RichEditor::make('content')
@@ -266,158 +129,6 @@ class PageResource extends Resource
                                                     ]),
                                             ]),
                                     ]),
-                                Forms\Components\Builder\Block::make('our_approach')
-                                    ->label('Our approach')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('title')
-                                            ->label('Title'),
-                                        Forms\Components\Textarea::make('bold_content')
-                                            ->label('Bold content'),
-                                        Forms\Components\RichEditor::make('content')
-                                            ->label('Content'),
-                                    ]),
-                                Forms\Components\Builder\Block::make('our_approach_2')
-                                    ->label('Our approach 2')
-                                    ->schema([
-                                        Tabs::make('OurApproach2Tabs')
-                                            ->tabs([
-                                                Tabs\Tab::make('En')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Tr')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('content_tr')
-                                                            ->label('Content'),
-                                                    ]),
-                                            ]),
-                                        Forms\Components\FileUpload::make('image')->label('Image')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor(),
-                                        Forms\Components\Toggle::make('dark')
-                                            ->label('Dark'),
-                                    ]),
-                                Forms\Components\Builder\Block::make('ceo_section')
-                                    ->label('Ceo section')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('title')
-                                            ->label('Title'),
-                                        Forms\Components\RichEditor::make('bold_content')
-                                            ->label('Bold content'),
-                                        Forms\Components\RichEditor::make('content')
-                                            ->label('Content'),
-                                        Forms\Components\FileUpload::make('image')->label('Image')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor(),
-                                    ]),
-                                Forms\Components\Builder\Block::make('our_history')
-                                    ->label('Our History')
-                                    ->schema([
-                                        Tabs::make('HistoryTabs')
-                                            ->tabs([
-                                                Tabs\Tab::make('En')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content')
-                                                            ->label('Content'),
-                                                    ]),
-                                                Tabs\Tab::make('Tr')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                        Forms\Components\RichEditor::make('bold_content_tr')
-                                                            ->label('Bold content'),
-                                                        Forms\Components\RichEditor::make('content_tr')
-                                                            ->label('Content'),
-                                                    ]),
-                                            ]),
-                                        Forms\Components\FileUpload::make('image_1')->label('Image 1')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor(),
-                                        Forms\Components\FileUpload::make('image_2')->label('Image 2')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor()
-                                    ]),
-                                Forms\Components\Builder\Block::make('partners')
-                                    ->label('Partners')
-                                    ->schema([
-                                        Forms\Components\Repeater::make('partner')
-                                            ->label('Partner')
-                                            ->schema([
-                                                Forms\Components\TextInput::make('title'),
-                                                Forms\Components\TextInput::make('link'),
-                                                Forms\Components\FileUpload::make('logo')
-                                                    ->directory('content-images')
-                                                    ->preserveFilenames()
-                                                    ->image()
-                                                    ->imageEditor(),
-                                            ]),
-                                    ]),
-                                Forms\Components\Builder\Block::make('page_title')
-                                    ->label('Page Title')
-                                    ->schema([
-                                        Tabs::make('PageTitleTabs')
-                                            ->tabs([
-                                                Tabs\Tab::make('En')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title')
-                                                            ->required(),
-                                                    ]),
-                                                Tabs\Tab::make('Tr')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                    ]),
-                                            ])
-                                    ]),
-                                Forms\Components\Builder\Block::make('blogs')
-                                    ->label('Blog')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('limit')
-                                            ->label('Limit')
-                                            ->required(),
-                                        Forms\Components\Toggle::make('pagination')
-                                            ->label('Pagination')
-                                            ->required(),
-                                    ]),
-                                Forms\Components\Builder\Block::make('latest_blogs')
-                                    ->label('Latest Blogs')
-                                    ->schema([
-                                        Tabs::make('Tabs')
-                                            ->tabs([
-                                                Tabs\Tab::make('En')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title')
-                                                            ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title')
-                                                            ->label('Sub title'),
-                                                    ]),
-                                                Tabs\Tab::make('Tr')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('title_tr')
-                                                            ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title_tr')
-                                                            ->label('Sub title'),
-                                                    ]),
-                                            ]),
-                                    ]),
                                 Forms\Components\Builder\Block::make('services')
                                     ->label('Services')
                                     ->schema([
@@ -427,65 +138,34 @@ class PageResource extends Resource
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title')
                                                             ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title')
-                                                            ->label('Sub title'),
                                                     ]),
                                                 Tabs\Tab::make('Tr')
                                                     ->schema([
                                                         Forms\Components\TextInput::make('title_tr')
                                                             ->label('Title'),
-                                                        Forms\Components\TextInput::make('sub_title_tr')
-                                                            ->label('Sub title'),
                                                     ]),
                                             ]),
-                                    ]),
-                                Forms\Components\Builder\Block::make('map')
-                                    ->label('Map')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('height')
-                                            ->label('Height')
-                                            ->required(),
-                                    ]),
-                                Forms\Components\Builder\Block::make('contact_form')
-                                    ->label('Contact Form')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('title'),
-                                        Forms\Components\TextInput::make('sub_title')->label('Sub title'),
-                                    ]),
-                                Forms\Components\Builder\Block::make('slider')
-                                    ->label('Slider')
-                                    ->schema([
-                                        Forms\Components\Repeater::make('slide')
-                                            ->label('Slide')
+                                        Forms\Components\Repeater::make('service')
+                                            ->label('Service')
                                             ->schema([
-                                                Forms\Components\TextInput::make('title'),
-                                                Forms\Components\TextInput::make('sub_title')->label('Sub title'),
-                                                Forms\Components\FileUpload::make('image')
-                                                    ->directory('slides')
-                                                    ->image()
-                                                    ->imageEditor(),
-                                                Forms\Components\TextInput::make('button_text')->label('Button Text'),
-                                                Forms\Components\TextInput::make('button_link')->label('Button Link'),
+                                                Tabs::make('ServiceTabs')
+                                                    ->tabs([
+                                                        Tabs\Tab::make('En')
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('title')
+                                                                    ->label('Title'),
+                                                                Forms\Components\RichEditor::make('content')
+                                                                    ->label('Content'),
+                                                            ]),
+                                                        Tabs\Tab::make('Tr')
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('title_tr')
+                                                                    ->label('Title'),
+                                                                Forms\Components\RichEditor::make('content_tr')
+                                                                    ->label('Content'),
+                                                            ]),
+                                                    ]),
                                             ]),
-                                    ]),
-                                Forms\Components\Builder\Block::make('content')
-                                    ->label('Content')
-                                    ->schema([
-                                        Forms\Components\RichEditor::make('content')
-                                            ->label('Content')
-                                            ->required(),
-                                    ]),
-                                Forms\Components\Builder\Block::make('content_with_image')
-                                    ->label('Content with Image')
-                                    ->schema([
-                                        Forms\Components\RichEditor::make('content')
-                                            ->label('Content')
-                                            ->required(),
-                                        Forms\Components\FileUpload::make('image')
-                                            ->directory('content-images')
-                                            ->preserveFilenames()
-                                            ->image()
-                                            ->imageEditor()
                                     ]),
                                 Forms\Components\Builder\Block::make('contacts')
                                     ->label('Contacts')
